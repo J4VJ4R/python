@@ -1,6 +1,12 @@
 import csv
+from tkinter import W
 
-with open('people.csv') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        print("Apellido paterno: {0}, Apellido Materno: {1}, Nombre: {2}, Ciudad. {3}".format(row[0], row[1], row[2], row[3]))
+people = [
+    ['Palacios', 'Rivas', 'Adan', 'CDMX'],
+    ['Torres', 'Palacios', 'Sandra', 'MOSQUERA'],
+    ['Martinez', 'Martinez', 'Jose', 'TIJUANA'],
+]
+
+with open('people.csv', 'w', newline='') as filecsv:
+    writer = csv.writer(filecsv, delimiter=' ')
+    writer.writerows(people)
